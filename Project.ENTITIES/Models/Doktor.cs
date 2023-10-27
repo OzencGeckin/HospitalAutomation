@@ -12,5 +12,6 @@ namespace Project.ENTITIES.Models
         //naber
         //sa
         //as
+        //yunus
     }
 }
