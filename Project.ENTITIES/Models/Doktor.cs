@@ -8,12 +8,6 @@ namespace Project.ENTITIES.Models
 {
     public class Doktor
     {
-        //selam
-        //naber
-        //sa
-        //as
-        //yunus
-        //sas
-        //Ss
+      
     }
 }
