@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Doktor
+    public class Doctor : BaseEntity
     {
-     //dal 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
