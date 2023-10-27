@@ -9,5 +9,6 @@ namespace Project.ENTITIES.Models
     public class Doktor
     {
         //selam
+        //naber
     }
 }
