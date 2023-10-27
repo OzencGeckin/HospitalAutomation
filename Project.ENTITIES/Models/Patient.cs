@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Doctor : BaseEntity
+    public class Patient : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
         //Relational Properties
         public virtual List<Appointment> Appointments { get; set; }
-        public virtual List<DoctorBranch> DoctorBranches { get; set; }
+
 
     }
 }
