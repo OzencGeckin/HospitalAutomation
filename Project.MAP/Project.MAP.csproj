@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Options\AppointmentMap.cs" />
+    <Compile Include="Options\BaseMap.cs" />
+    <Compile Include="Options\BranchMap.cs" />
+    <Compile Include="Options\DoctorBranchMap.cs" />
+    <Compile Include="Options\DoctorMap.cs" />
+    <Compile Include="Options\PatientMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +69,7 @@
       <Name>Project.ENTITIES</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
