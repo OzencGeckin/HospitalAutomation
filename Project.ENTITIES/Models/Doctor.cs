@@ -14,5 +14,10 @@ namespace Project.ENTITIES.Models
         public virtual List<Appointment> Appointments { get; set; }
         public virtual List<DoctorBranch> DoctorBranches { get; set; }
 
+        public string GetDoctorsInfo()
+        {
+            return $"{FirstName} {LastName}";
+        }
+
     }
 }
