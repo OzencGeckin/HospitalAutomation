@@ -44,6 +44,7 @@
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(121, 21);
             this.cmbDoctor.TabIndex = 23;
+            this.cmbDoctor.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbDoctor_Format);
             // 
             // cmbBranch
             // 
@@ -70,6 +71,7 @@
             this.lstPatients.Name = "lstPatients";
             this.lstPatients.Size = new System.Drawing.Size(240, 186);
             this.lstPatients.TabIndex = 21;
+            this.lstPatients.SelectedIndexChanged += new System.EventHandler(this.lstPatients_SelectedIndexChanged);
             // 
             // btnCreateAppointment
             // 
@@ -79,6 +81,7 @@
             this.btnCreateAppointment.TabIndex = 20;
             this.btnCreateAppointment.Text = "Randevu Oluştur";
             this.btnCreateAppointment.UseVisualStyleBackColor = true;
+            this.btnCreateAppointment.Click += new System.EventHandler(this.btnCreateAppointment_Click);
             // 
             // txtPLastName
             // 
@@ -98,7 +101,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(390, 286);
             this.Controls.Add(this.cmbDoctor);
             this.Controls.Add(this.cmbBranch);
             this.Controls.Add(this.lblPatient);

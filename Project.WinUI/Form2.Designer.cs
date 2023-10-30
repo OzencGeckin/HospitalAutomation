@@ -101,7 +101,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(390, 286);
             this.Controls.Add(this.cmbBranch);
             this.Controls.Add(this.btnSwitchForm3);
             this.Controls.Add(this.lblDoctor);
@@ -111,7 +112,6 @@
             this.Controls.Add(this.txtDFirstName);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

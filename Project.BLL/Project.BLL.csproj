@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="DesignPatterns\GenericRepository\BaseRep\BaseRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\AppointmentRepository.cs" />
-    <Compile Include="DesignPatterns\GenericRepository\ConcRep\BranchReapository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\BranchRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\DoctorRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\DoctorBranchRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\PatientRepository.cs" />

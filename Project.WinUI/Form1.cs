@@ -1,5 +1,5 @@
-﻿using Project.BLL.DesignPatterns.SingletonPattern;
-using Project.DAL.ContextClasses;
+﻿using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
+using Project.BLL.DesignPatterns.SingletonPattern;
 using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
@@ -16,11 +16,11 @@ namespace Project.WinUI
 {
     public partial class Form1 : Form
     {
-        MyContext _db;
+        BranchRepository _brancRepository;
         public Form1()
         {
             InitializeComponent();
-            _db = DBTool.DBInstance;
+            _brancRepository = new BranchRepository();
         }
         
         private void btnBranchAdd_Click(object sender, EventArgs e)
@@ -33,7 +33,8 @@ namespace Project.WinUI
             Branch branch = new Branch();
             branch.BranchName = txtBranch.Text;
             lstBranches.Items.Add(branch);
-            _db.SaveChanges();
+            _brancRepository.Add(branch);
+            
         }
 
         private void lstBranches_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,8 +48,8 @@ namespace Project.WinUI
 
         private void btnSwitchForm2_Click(object sender, EventArgs e)
         {
-            Hide();
-            Form2 form2 = new Form2((ListBox.ObjectCollection)lstBranches.Items);
+            
+            Form2 form2 = new Form2();
             form2.ShowDialog();
         }
     }

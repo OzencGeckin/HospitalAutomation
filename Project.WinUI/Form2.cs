@@ -1,5 +1,5 @@
-﻿using Project.BLL.DesignPatterns.SingletonPattern;
-using Project.DAL.ContextClasses;
+﻿using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
+using Project.BLL.DesignPatterns.SingletonPattern;
 using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
@@ -15,28 +15,19 @@ namespace Project.WinUI
 {
     public partial class Form2 : Form
     {
-        MyContext _db;
+        DoctorRepository _doctorRepository;
+        BranchRepository _brancRepository;
+        DoctorBranchRepository _doctorBranchRepository;
         public Form2()
         {
             InitializeComponent();
-            _db = DBTool.DBInstance;
+            _brancRepository = new BranchRepository();
+            _doctorRepository = new DoctorRepository();
+            _doctorBranchRepository = new DoctorBranchRepository();
+            cmbBranch.DataSource = _brancRepository.GetAll();
+            cmbBranch.DisplayMember = "BranchName";
         }
-        public Form2(ListBox.ObjectCollection branches)
-        {
-            InitializeComponent();
-            _db = DBTool.DBInstance;
-            foreach (Branch item in branches)
-            {
-                cmbBranch.Items.Add(item.BranchName);
-                bRaNcHes = branches;
-            }
-        }
-        ListBox.ObjectCollection bRaNcHes;
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void btnDoctorAdd_Click(object sender, EventArgs e)
         {
             Doctor doctor = new Doctor();
@@ -46,6 +37,8 @@ namespace Project.WinUI
             doctorBranch.Doctor = doctor;
             doctorBranch.Branch = cmbBranch.SelectedItem as Branch;
             lstDoctors.Items.Add(doctor);
+            _doctorRepository.Add(doctor);
+            _doctorBranchRepository.Add(doctorBranch);
         }
 
         private void lstDoctors_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,8 +51,8 @@ namespace Project.WinUI
 
         private void btnSwitchForm3_Click(object sender, EventArgs e)
         {
-            Hide();
-            Form3 form3 = new Form3(bRaNcHes as ListBox.ObjectCollection, lstDoctors.Items as ListBox.ObjectCollection);
+            
+            Form3 form3 = new Form3();
             form3.ShowDialog();
         }
     }
