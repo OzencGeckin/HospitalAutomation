@@ -63,21 +63,23 @@ namespace Project.WinUI
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
 
+            
+            Appointment appointment = new Appointment();
+            appointment.Doctor = cmbDoctor.SelectedItem as Doctor;
+            //patient.Appointments.Add(appointment);
 
             Patient patient = new Patient();
             patient.FirstName = txtPFirstName.Text;
             patient.LastName = txtPLastName.Text;
+            _patientRepository.Add(patient);
 
-
-            Appointment appointment = new Appointment();
             appointment.Patient = patient;
-            appointment.Doctor = cmbDoctor.SelectedItem as Doctor;
             _appointmentRepository.Add(appointment);
-
-            patient.Appointments.Add(appointment);
+            //patient.Appointments.Add(appointment);
+            
 
             lstPatients.Items.Add(patient);
-            _patientRepository.Add(patient);
+            
 
 
 
